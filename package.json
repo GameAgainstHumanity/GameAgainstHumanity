@@ -1,0 +1,28 @@
+{
+  "name": "gah",
+  "version": "1.0.0",
+  "description": "card game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": " nodemon ./src/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code4Zelda/GameAgainstHumanity.git"
+  },
+  "author": "Mario G, Frank , Donte N",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Code4Zelda/GameAgainstHumanity/issues"
+  },
+  "homepage": "https://github.com/Code4Zelda/GameAgainstHumanity#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "pg": "^7.8.0",
+    "pg-promise": "^8.5.4"
+  }
+}
