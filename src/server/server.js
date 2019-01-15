@@ -31,9 +31,6 @@ app.get('/questions', (req,res)=>{
 })
 
 
-// app.post('/join-game', (req,res)=>{
-
-// })
 
 
 
