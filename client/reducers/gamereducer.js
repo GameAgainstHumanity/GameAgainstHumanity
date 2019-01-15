@@ -36,6 +36,10 @@ const initialState = {
     4: 'card4',
     5: 'card5',
   },
+  submissions: {
+    1: 'Donte submission',
+    2: 'Mario submission',
+  },
   turn: true,
   submitId: null,
 };
