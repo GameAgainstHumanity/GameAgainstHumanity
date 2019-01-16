@@ -86,39 +86,90 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./client/actions/actions.js":
-/*!***********************************!*\
-  !*** ./client/actions/actions.js ***!
-  \***********************************/
-/*! exports provided: handleChange, handleSignupSubmit, handleLoginSubmit */
+/***/ "./client/components/Answers.jsx":
+/*!***************************************!*\
+  !*** ./client/components/Answers.jsx ***!
+  \***************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleChange", function() { return handleChange; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleSignupSubmit", function() { return handleSignupSubmit; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleLoginSubmit", function() { return handleLoginSubmit; });
-/* harmony import */ var _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/actionNames */ "./client/constants/actionNames.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const handleChange = (e, tochange, name) => {
-  console.log(name);
-  return {
-    type: _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_CHANGE"],
-    tochange: tochange,
-    payload: e.target.value
-  };
+
+const Answers = ({
+  answers,
+  turn
+}) => {
+  console.log('turn: ', turn);
+  const answerList = Object.entries(answers).map(([id, content]) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: id
+  }, content, turn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "submit") : null));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, answerList);
 };
-const handleSignupSubmit = e => {
-  e.preventDefault();
-  return {
-    type: _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_SIGNUP_SUBMIT"],
-    payload: e
-  };
+
+/* harmony default export */ __webpack_exports__["default"] = (Answers);
+
+/***/ }),
+
+/***/ "./client/components/Players.jsx":
+/*!***************************************!*\
+  !*** ./client/components/Players.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Players = ({
+  players
+}) => {
+  const playerList = players.map(({
+    name,
+    points,
+    turn,
+    id
+  }) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: id
+  }, "NAME:", name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Points:", points, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "TURN:", turn ? 'Yes' : 'No'));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, playerList);
 };
-const handleLoginSubmit = e => ({
-  type: _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_LOGIN_SUBMIT"],
-  payload: e
-});
+
+/* harmony default export */ __webpack_exports__["default"] = (Players);
+
+/***/ }),
+
+/***/ "./client/components/Submission.jsx":
+/*!******************************************!*\
+  !*** ./client/components/Submission.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Submission = ({
+  submissions,
+  playerLength
+}) => {
+  let submissionList = Object.entries(submissions);
+  submissionList = Object.entries(submissions).map(([playerid, submission]) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: playerid
+  }, submission, submissionList.length === playerLength - 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "choose") : null));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, submissionList);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Submission);
 
 /***/ }),
 
@@ -153,147 +204,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _LogIn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LogIn */ "./client/containers/LogIn.jsx");
-/* harmony import */ var _SignUp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SignUp */ "./client/containers/SignUp.jsx");
+/* harmony import */ var _components_Players__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Players */ "./client/components/Players.jsx");
+/* harmony import */ var _components_Answers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Answers */ "./client/components/Answers.jsx");
+/* harmony import */ var _components_Submission__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Submission */ "./client/components/Submission.jsx");
 
 
 
 
 
 
-const mapStateToProps = () => ({});
+
+const mapStateToProps = ({
+  game
+}) => ({
+  question: game.question,
+  players: game.players,
+  answers: game.answerCards,
+  turn: game.turn,
+  submissions: game.submissions
+});
 
 const mapDispatchToProps = dispatch => ({});
 
-const App = props => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+const App = ({
+  question,
+  players,
+  answers,
+  turn,
+  submissions
+}) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
   className: "container"
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SignUp__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LogIn__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+}, "THIS IS THE GAME BOARD", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "PLAYERS:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Players__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  players: players
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "QUESTION:", question.content, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Submission__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  submissions: submissions,
+  playerLength: players.length
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "ANSWER CARDS:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  answers: answers,
+  turn: turn
+}));
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(App));
-
-/***/ }),
-
-/***/ "./client/containers/LogIn.jsx":
-/*!*************************************!*\
-  !*** ./client/containers/LogIn.jsx ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _actions_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/actions */ "./client/actions/actions.js");
-
-
-
-
-
-const LogIn = props => {
-  const {
-    currentText,
-    handleLoginSubmit
-  } = props;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    onSubmit: handleLoginSubmit
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Name: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onChange: _actions_actions__WEBPACK_IMPORTED_MODULE_3__["handleChange"],
-    value: currentText
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Password: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onChange: _actions_actions__WEBPACK_IMPORTED_MODULE_3__["handleChange"],
-    value: currentText
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "submit"
-  }, "Submit")));
-};
-
-const mapStateToProps = state => {
-  return {
-    name: state.name,
-    password: state.password
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_2__["bindActionCreators"])({
-    handleChange: _actions_actions__WEBPACK_IMPORTED_MODULE_3__["handleChange"],
-    handleLoginSubmit: _actions_actions__WEBPACK_IMPORTED_MODULE_3__["handleLoginSubmit"]
-  }, dispatch);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(LogIn));
-
-/***/ }),
-
-/***/ "./client/containers/SignUp.jsx":
-/*!**************************************!*\
-  !*** ./client/containers/SignUp.jsx ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _actions_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/actions */ "./client/actions/actions.js");
-
-
-
-
-
-const SignUp = props => {
-  console.log(props);
-  const {
-    handleSignupSubmit,
-    name,
-    phone,
-    password,
-    handleChange
-  } = props;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    onSubmit: handleSignupSubmit
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Name: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onChange: e => handleChange(e, 'name', name),
-    value: name
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Phone Number: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onChange: e => handleChange(e, 'phone'),
-    value: phone
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Password: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    onChange: e => handleChange(e, 'password'),
-    value: password
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "submit"
-  }, "Submit")));
-};
-
-const mapStateToProps = state => {
-  console.log('state: ', state);
-  return {
-    name: state.name,
-    phone: state.phone,
-    password: state.password
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_2__["bindActionCreators"])({
-    handleChange: _actions_actions__WEBPACK_IMPORTED_MODULE_3__["handleChange"],
-    handleSignupSubmit: _actions_actions__WEBPACK_IMPORTED_MODULE_3__["handleSignupSubmit"]
-  }, dispatch);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(SignUp));
 
 /***/ }),
 
@@ -324,6 +275,78 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 
 /***/ }),
 
+/***/ "./client/reducers/gamereducer.js":
+/*!****************************************!*\
+  !*** ./client/reducers/gamereducer.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/actionNames */ "./client/constants/actionNames.js");
+
+
+const axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+const initialState = {
+  id: 3,
+  points: 5,
+  question: {
+    id: 8,
+    content: 'I love __'
+  },
+  players: [{
+    name: 'Frank',
+    id: 3,
+    points: 5,
+    turn: true
+  }, {
+    name: 'Donte',
+    id: 1,
+    points: 20,
+    turn: false
+  }, {
+    name: 'Mario',
+    id: 2,
+    points: 10,
+    turn: false
+  }],
+  answerCards: {
+    1: 'card1',
+    2: 'card2',
+    3: 'card3',
+    4: 'card4',
+    5: 'card5'
+  },
+  submissions: {
+    1: 'Donte submission',
+    2: 'Mario submission'
+  },
+  turn: true,
+  submitId: null
+};
+
+const loginReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_CHANGE"]:
+      {
+        return {
+          name: action.payload,
+          phone: action.payload,
+          password: action.payload
+        };
+      }
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (loginReducer);
+
+/***/ }),
+
 /***/ "./client/reducers/index.js":
 /*!**********************************!*\
   !*** ./client/reducers/index.js ***!
@@ -336,7 +359,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _signupReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signupReducer */ "./client/reducers/signupReducer.js");
 /* harmony import */ var _loginReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./loginReducer */ "./client/reducers/loginReducer.js");
+/* harmony import */ var _gamereducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gamereducer */ "./client/reducers/gamereducer.js");
  // import all reducers here
+
 
 
  // combine reducers
@@ -344,7 +369,8 @@ __webpack_require__.r(__webpack_exports__);
 const reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   // if we had other reducers, they would go here
   signup: _signupReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  login: _loginReducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  login: _loginReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  game: _gamereducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }); // make the combined reducers available for import
 
 /* harmony default export */ __webpack_exports__["default"] = (reducers);
