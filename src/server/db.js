@@ -28,7 +28,7 @@ const initOptions = {
   },
   disconnect(client, dc) {
     const cp = client.connectionParameters;
-    console.log('Disconnected from database' + cp.database)
+    console.log('Disconnected from database ' + cp.database)
   },
   query(e) {
     console.log('QUERY:' + e.query)
