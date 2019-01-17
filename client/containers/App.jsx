@@ -25,21 +25,16 @@ const App = ({
   submissions,
 }) => (
   <div className="container">
-    THIS IS THE GAME BOARD
-    <br />
-    <br />
-    PLAYERS:
+    <h1>Game Against Humanity</h1>
+    <h2>PLAYERS:</h2>
+
     <Players players={players} />
-    <br />
-    <br />
-    QUESTION:
-    {question.content}
-    <br />
-    <br />
+    <h2>QUESTION:</h2>
+    <div className="question">
+      {question.content}
+    </div>
     <Submission submissions={submissions} playerLength={players.length} />
-    <br />
-    <br />
-    ANSWER CARDS:
+    <h2>ANSWER CARDS:</h2>
     <Answers answers={answers} turn={turn} />
   </div>
 );

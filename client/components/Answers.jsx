@@ -1,17 +1,16 @@
 import React from 'react';
 
 const Answers = ({ answers, turn }) => {
-  console.log('turn: ', turn);
   const answerList = Object.entries(answers).map(([
     id, content,
   ]) => (
-    <div key={id}>
+    <div key={id} className="answer">
       {content}
-      {turn ? <button>submit</button> : null}
+      {!turn ? <button>submit</button> : null}
     </div>
   ));
   return (
-    <div>
+    <div className="answer-container">
       {answerList}
     </div>
   );
