@@ -97,16 +97,29 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-const Answers = ({
-  answers,
-  turn
-}) => {
-  const answerList = Object.entries(answers).map(([id, content]) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    key: id,
-    className: "answer"
-  }, content, !turn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "submit") : null));
+
+var Answers = function Answers(_ref) {
+  var answers = _ref.answers,
+      turn = _ref.turn;
+  var answerList = Object.entries(answers).map(function (_ref2) {
+    var _ref3 = _slicedToArray(_ref2, 2),
+        id = _ref3[0],
+        content = _ref3[1];
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: id,
+      className: "answer"
+    }, content, !turn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "submit") : null);
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "answer-container"
   }, answerList);
@@ -129,18 +142,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-const Players = ({
-  players
-}) => {
-  const playerList = players.map(({
-    name,
-    points,
-    turn,
-    id
-  }) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    key: id,
-    className: "player"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, points), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, turn ? String.fromCharCode(9752) : null)));
+var Players = function Players(_ref) {
+  var players = _ref.players;
+  var playerList = players.map(function (_ref2) {
+    var name = _ref2.name,
+        points = _ref2.points,
+        turn = _ref2.turn,
+        id = _ref2.id;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: id,
+      className: "player"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, points), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, turn ? String.fromCharCode(9752) : null));
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, playerList);
 };
 
@@ -159,17 +172,30 @@ const Players = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-const Submission = ({
-  submissions,
-  playerLength
-}) => {
-  let submissionList = Object.entries(submissions);
-  submissionList = Object.entries(submissions).map(([playerid, submission]) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    key: playerid,
-    className: "answer"
-  }, submission, submissionList.length === playerLength - 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "choose") : null));
+
+var Submission = function Submission(_ref) {
+  var submissions = _ref.submissions,
+      playerLength = _ref.playerLength;
+  var submissionList = Object.entries(submissions);
+  submissionList = Object.entries(submissions).map(function (_ref2) {
+    var _ref3 = _slicedToArray(_ref2, 2),
+        playerid = _ref3[0],
+        submission = _ref3[1];
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: playerid,
+      className: "answer"
+    }, submission, submissionList.length === playerLength - 1 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "choose") : null);
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "submission"
   }, submissionList);
@@ -191,9 +217,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HANDLE_CHANGE", function() { return HANDLE_CHANGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HANDLE_LOGIN_SUBMIT", function() { return HANDLE_LOGIN_SUBMIT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HANDLE_SIGNUP_SUBMIT", function() { return HANDLE_SIGNUP_SUBMIT; });
-const HANDLE_CHANGE = "HANDLE_CHANGE";
-const HANDLE_LOGIN_SUBMIT = "HANDLE_LOGIN_SUBMIT";
-const HANDLE_SIGNUP_SUBMIT = "HANDLE_SIGNUP_SUBMIT";
+var HANDLE_CHANGE = "HANDLE_CHANGE";
+var HANDLE_LOGIN_SUBMIT = "HANDLE_LOGIN_SUBMIT";
+var HANDLE_SIGNUP_SUBMIT = "HANDLE_SIGNUP_SUBMIT";
 
 /***/ }),
 
@@ -220,37 +246,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const mapStateToProps = ({
-  game
-}) => ({
-  question: game.question,
-  players: game.players,
-  answers: game.answerCards,
-  turn: game.turn,
-  submissions: game.submissions
-});
+var mapStateToProps = function mapStateToProps(_ref) {
+  var game = _ref.game;
+  return {
+    question: game.question,
+    players: game.players,
+    answers: game.answerCards,
+    turn: game.turn,
+    submissions: game.submissions
+  };
+};
 
-const mapDispatchToProps = dispatch => ({});
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
 
-const App = ({
-  question,
-  players,
-  answers,
-  turn,
-  submissions
-}) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: "container"
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Game Against Humanity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PLAYERS:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Players__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  players: players
-}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "QUESTION:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: "question"
-}, question.content), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Submission__WEBPACK_IMPORTED_MODULE_5__["default"], {
-  submissions: submissions,
-  playerLength: players.length
-}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "ANSWER CARDS:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
-  answers: answers,
-  turn: turn
-}));
+var App = function App(_ref2) {
+  var question = _ref2.question,
+      players = _ref2.players,
+      answers = _ref2.answers,
+      turn = _ref2.turn,
+      submissions = _ref2.submissions;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Game Against Humanity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PLAYERS:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Players__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    players: players
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "QUESTION:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "question"
+  }, question.content), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Submission__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    submissions: submissions,
+    playerLength: players.length
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "ANSWER CARDS:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Answers__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    answers: answers,
+    turn: turn
+  }));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(App));
 
@@ -298,9 +328,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/actionNames */ "./client/constants/actionNames.js");
 
 
-const axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
-const initialState = {
+var initialState = {
   id: 3,
   points: 5,
   question: {
@@ -338,7 +368,10 @@ const initialState = {
   submitId: null
 };
 
-const loginReducer = (state = initialState, action) => {
+var loginReducer = function loginReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_CHANGE"]:
       {
@@ -377,7 +410,7 @@ __webpack_require__.r(__webpack_exports__);
 
  // combine reducers
 
-const reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
+var reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   // if we had other reducers, they would go here
   signup: _signupReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   login: _loginReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -400,14 +433,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/actionNames */ "./client/constants/actionNames.js");
 
 
-const axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
-const initialState = {
+var initialState = {
   name: '',
   password: ''
 };
 
-const loginReducer = (state = initialState, action) => {
+var loginReducer = function loginReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_CHANGE"]:
       {
@@ -427,7 +463,7 @@ const loginReducer = (state = initialState, action) => {
           data: {
             name: '1'
           }
-        }).then(data => {
+        }).then(function (data) {
           return data.json();
         }); // if so, redirect to goals progress dashboard
         // otherwise, redirect to signup page and notify "you are not signed up", along w error
@@ -457,30 +493,37 @@ const loginReducer = (state = initialState, action) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/actionNames */ "./client/constants/actionNames.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
-const initialState = {
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var initialState = {
   name: 'a',
   phone: 'b',
   password: 'c'
 };
 
-const signupReducer = (state = initialState, action) => {
+var signupReducer = function signupReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
   switch (action.type) {
     case _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_CHANGE"]:
       {
         if (action.tochange === 'phone') {
-          return { ...state,
+          return _objectSpread({}, state, {
             phone: action.payload
-          };
+          });
         } else if (action.tochange === 'name') {
-          return { ...state,
+          return _objectSpread({}, state, {
             name: action.payload
-          };
+          });
         }
 
-        return { ...state,
+        return _objectSpread({}, state, {
           password: action.payload
-        };
+        });
       }
 
     case _constants_actionNames__WEBPACK_IMPORTED_MODULE_0__["HANDLE_SIGNUP_SUBMIT"]:
@@ -497,9 +540,13 @@ const signupReducer = (state = initialState, action) => {
             phone: state.phone,
             password: state.password
           })
-        }).then(data => {
+        }).then(function (data) {
           return data.json();
-        }).then(response => response).catch(err => console.log(err)); // return state;
+        }).then(function (response) {
+          return response;
+        }).catch(function (err) {
+          return console.log(err);
+        }); // return state;
       }
 
     default:
@@ -530,7 +577,7 @@ __webpack_require__.r(__webpack_exports__);
 //   loginReducer: loginReducer,
 // });
 
-const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_index__WEBPACK_IMPORTED_MODULE_2__["default"]);
+var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_index__WEBPACK_IMPORTED_MODULE_2__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),
@@ -2240,7 +2287,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;\n  margin: 5px;\n  padding: 0; }\n\nbody {\n  padding-top: 4em; }\n\n.player {\n  display: flex;\n  background-color: pink; }\n\n.player p {\n  font-size: 30px; }\n\n.container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center; }\n\n.answer-container {\n  display: flex; }\n\n.answer {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: white;\n  background-color: #363535;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between; }\n\n.submission {\n  display: flex;\n  justify-content: space-around; }\n\n.question {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: #363535;\n  background-color: white;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border: 2px solid #363535; }\n\nh1 {\n  color: blue;\n  font-size: 50px; }\n\nh2 {\n  color: red; }\n\nbutton {\n  min-width: 4em;\n  padding: 0.4em 1em;\n  margin: 3px;\n  border: 1px solid #ccc;\n  border-radius: 2px; }\n  button:disabled {\n    background-color: #eee;\n    color: #777; }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;\n  margin: 5px;\n  padding: 0; }\n\nbody {\n  padding-top: 4em; }\n\n.player {\n  display: flex;\n  background-color: lightblue; }\n\n.player p {\n  font-size: 30px; }\n\n.container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center; }\n\n.answer-container {\n  display: flex; }\n\n.answer {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: white;\n  background-color: #363535;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between; }\n\n.submission {\n  display: flex;\n  justify-content: space-around; }\n\n.question {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: #363535;\n  background-color: white;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border: 2px solid #363535; }\n\nh1 {\n  color: blue;\n  font-size: 50px; }\n\nh2 {\n  color: red; }\n\nbutton {\n  min-width: 4em;\n  padding: 0.4em 1em;\n  margin: 3px;\n  border: 1px solid #ccc;\n  border-radius: 2px; }\n  button:disabled {\n    background-color: #eee;\n    color: #777; }\n\n@media only screen and (max-width: 800px) {\n  body {\n    background-color: lightblue; }\n  .player {\n    background-color: white; }\n  .answer-container {\n    display: flex;\n    flex-wrap: wrap; } }\n", ""]);
 
 // exports
 
@@ -33191,4 +33238,4 @@ module.exports = function(originalModule) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=client.js.map

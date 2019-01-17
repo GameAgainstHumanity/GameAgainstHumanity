@@ -3,10 +3,13 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './client/index.jsx',
-
+  entry: {
+    client: './client/index.jsx',
+    ssr: './src/ssr/ssrindex.jsx',
+  },
   output: {
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].js",
   },
   devServer: {
     publicPath: '/dist',

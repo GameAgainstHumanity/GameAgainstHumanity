@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
-    "build": "webpack -w",
-    "server": " nodemon ./src/server/server.js"
+    "pack": "webpack --config webpack.config.js -w",
+    "start": " nodemon ./src/server/server.js",
+    "babel": "babel src -d views",
+    "build": "npm run babel && npm run pack"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -27,13 +29,16 @@
     "redux": "^4.0.1",
     "socket.io": "^2.2.0",
     "socket.io-client": "^2.2.0",
-    "ws": "^6.1.2"
+    "ws": "^6.1.2",
+    "redux-thunk": "^2.3.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frankyma/GameAgainstHumanity.git"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "@babel/core": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
