@@ -7,7 +7,7 @@ const initialState = {
   points: 5,
   question: {
     id: 8,
-    content: 'I love __',
+    content: 'I GET BY WITH A LITTLE HELP FROM?',
   },
   players: [
     {
@@ -30,15 +30,15 @@ const initialState = {
     },
   ],
   answerCards: {
-    1: 'card1',
-    2: 'card2',
-    3: 'card3',
-    4: 'card4',
-    5: 'card5',
+    1: 'The Force',
+    2: 'Tom Cruise',
+    3: 'An ugly face.',
+    4: 'Some got-damn peace and quiet.',
+    5: 'The milk man.',
   },
   submissions: {
-    1: 'Donte submission',
-    2: 'Mario submission',
+    1: 'Poor people',
+    2: 'Being rich.',
   },
   turn: true,
   submitId: null,

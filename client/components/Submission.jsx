@@ -5,13 +5,13 @@ const Submission = ({ submissions, playerLength }) => {
   submissionList = Object.entries(submissions).map(([
     playerid, submission,
   ]) => (
-    <div key={playerid}>
+    <div key={playerid} className="answer">
       {submission}
       {submissionList.length === playerLength - 1 ? <button>choose</button>: null}
     </div>
   ));
   return (
-    <div>
+    <div className="submission">
       {submissionList}
     </div>
   );

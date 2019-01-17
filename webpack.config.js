@@ -9,11 +9,16 @@ module.exports = {
     filename: 'bundle.js',
   },
   devServer: {
-    publicPath: '/',
+    publicPath: '/dist',
   },
   module: {
     rules: [
       { test: /\.css$/, use: 'css-loader' },
+      {
+        test: /scss$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
