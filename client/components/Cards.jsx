@@ -1,20 +1,20 @@
 import React from 'react';
 
-const Answers = ({ answers, turn }) => {
+const Cards = ({ players, turn }) => {
   console.log('turn: ', turn);
-  const answerList = Object.entries(answers).map(([
-    id, content,
+  const cardsInHand = Object.entries(players).map(([
+    id, cards,
   ]) => (
     <div key={id}>
-      {content}
+      {cards}
       {turn ? <button>submit</button> : null}
     </div>
   ));
   return (
     <div>
-      {answerList}
+      {cardsInHand}
     </div>
   );
 };
 
-export default Answers;
+export default Cards;
