@@ -15,7 +15,7 @@ const db = require('./db');
 const PORT = 3001;
 
 
-app.use('/', express.static('assets'));
+app.use('/', (express.static(path.resolve(__dirname, '../../dist'))));
 
 app.use(cors());
 app.use(bodyParser.json());

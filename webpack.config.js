@@ -9,7 +9,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   devServer: {
-    publicPath: '/',
+    publicPath: '/dist',
   },
   module: {
     rules: [
