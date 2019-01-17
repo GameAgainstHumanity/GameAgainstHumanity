@@ -5,14 +5,9 @@ const Players = ({ players }) => {
     name, points, turn, id,
   }) => (
     <div key={id}>
-      NAME:
-      {name}
-      <br />
-      Points:
-      {points}
-      <br />
-      TURN:
-      {turn ? 'Yes' : 'No'}
+      <p>NAME: {name}</p>
+      <p>Points: {points} </p>
+      <p>Turn: {turn ? 'Yes' : 'No'}</p>
     </div>
   ));
   return (

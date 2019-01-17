@@ -2,19 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Players from '../components/Players';
-import Answers from '../components/Answers';
+import Cards from '../components/Cards';
 import Submission from '../components/Submission';
+import Join from '../components/Join';
 
 
 const mapStateToProps = ({ game }) => ({
   question: game.question,
   players: game.players,
-  answers: game.answerCards,
-  turn: game.turn,
-  submissions: game.submissions,
+  cards: game.players,
+  turn: game.players,
+  submissions: game.submissions
 });
 
 const mapDispatchToProps = dispatch => ({
+  
+
 });
 
 const App = ({
@@ -25,22 +28,24 @@ const App = ({
   submissions,
 }) => (
   <div className="container">
-    THIS IS THE GAME BOARD
+    <h1>Cards Versus Humanity</h1>
     <br />
     <br />
-    PLAYERS:
-    <Players players={players} />
-    <br />
-    <br />
-    QUESTION:
+    <Join />
+    {/* <Join name={players[0].name} />
+    <br/> */}
+
+    <h3>QUESTION:</h3>
     {question.content}
+    <h3>PLAYERS:</h3>
+    <Players players={players} />
+    {/* <Submission submissions={submissions} playerLength={players.length} /> */}
     <br />
     <br />
-    <Submission submissions={submissions} playerLength={players.length} />
-    <br />
-    <br />
-    ANSWER CARDS:
-    <Answers answers={answers} turn={turn} />
+    <h3>CARDS IN HAND</h3>
+    {/* <Cards answers={answers} turn={turn} /> */}
+    {/* <Cards /> */}
+
   </div>
 );
 
