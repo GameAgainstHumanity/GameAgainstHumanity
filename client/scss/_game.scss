@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;
+  margin: 5px ;
+  padding: 0;
+  // border: 1px solid black;;
+}
+
+body {
+  padding-top: 4em;
+}
+
+.player {
+  display: flex;
+  background-color: $lightblue;
+}
+
+.player p {
+  font-size: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer-container {
+  display: flex;
+}
+.answer {
+  height: 200px;
+  width: 150px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: $cardwhite;
+  background-color: $cardblack;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.submission {
+  display: flex;
+  justify-content: space-around; 
+}
+
+.question {
+  height: 200px;
+  width: 150px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: $cardblack;
+  background-color: $cardwhite;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  border: 2px solid $cardblack;
+}
+
+h1 {
+  color: blue;
+  font-size: 40px;
+}
+
+h2 {
+  color: red;
+  // font-size: 40px;
+}
+
+button {
+  min-width: 4em;
+  padding: 0.4em 1em;
+  margin: 3px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  &:disabled {
+    background-color: #eee;
+    color: #777;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: $lightblue;
+  }
+
+  .player {
+    background-color: white;
+  }
+
+  .answer-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

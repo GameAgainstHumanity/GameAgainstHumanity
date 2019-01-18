@@ -3,17 +3,25 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './client/index.jsx',
-
+  entry: {
+    client: './client/index.jsx',
+    ssr: './src/ssr/ssrindex.jsx',
+  },
   output: {
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].js",
   },
   devServer: {
-    publicPath: '/',
+    publicPath: '/dist',
   },
   module: {
     rules: [
       { test: /\.css$/, use: 'css-loader' },
+      {
+        test: /scss$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
