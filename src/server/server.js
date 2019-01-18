@@ -7,8 +7,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const ssr = require('../../views/ssrutil/render.util');
+const headerssr = require('../../views/ssrutil/header.util');
 const template = require('../../views/ssrutil/template');
-
+const clienttemplate = require('../../views/ssrutil/clienttemplate');
 // databases
 const db = require('./db');
 
@@ -17,9 +18,17 @@ const PORT = 3001;
 
 // client side render
 app.use('/', (express.static(path.resolve(__dirname, '../../dist'))));
-app.use('/dist/', (express.static(path.resolve(__dirname, '../../dist'))))
+app.use('/dist/', (express.static(path.resolve(__dirname, '../../dist'))));
 
-let initialState = {};
+// server side render app
+app.use('/game', (req, res) => {
+  const { preloadedState, content } = headerssr(initialState);
+  const response = clienttemplate('Server Rendered Page', preloadedState, content);
+  res.setHeader('Cache-Control', 'assets, max-age=604800');
+  res.send(response);
+});
+// server side render
+const initialState = {};
 app.use('/home', (req, res) => {
   const { preloadedState, content } = ssr(initialState);
   const response = template('Server Rendered Page', preloadedState, content);

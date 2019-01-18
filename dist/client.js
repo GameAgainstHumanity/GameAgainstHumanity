@@ -310,9 +310,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__["Provider"], {
-  store: _reducers_store__WEBPACK_IMPORTED_MODULE_4__["default"]
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_App__WEBPACK_IMPORTED_MODULE_3__["default"], null)), document.getElementById('root'));
+
+function runApp() {
+  Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__["Provider"], {
+    store: _reducers_store__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_App__WEBPACK_IMPORTED_MODULE_3__["default"], null)), document.getElementById('root'));
+}
+
+setTimeout(runApp, 1500);
 
 /***/ }),
 
@@ -2287,7 +2292,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;\n  margin: 5px;\n  padding: 0; }\n\nbody {\n  padding-top: 4em; }\n\n.player {\n  display: flex;\n  background-color: lightblue; }\n\n.player p {\n  font-size: 30px; }\n\n.container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center; }\n\n.answer-container {\n  display: flex; }\n\n.answer {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: white;\n  background-color: #363535;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between; }\n\n.submission {\n  display: flex;\n  justify-content: space-around; }\n\n.question {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: #363535;\n  background-color: white;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border: 2px solid #363535; }\n\nh1 {\n  color: blue;\n  font-size: 50px; }\n\nh2 {\n  color: red; }\n\nbutton {\n  min-width: 4em;\n  padding: 0.4em 1em;\n  margin: 3px;\n  border: 1px solid #ccc;\n  border-radius: 2px; }\n  button:disabled {\n    background-color: #eee;\n    color: #777; }\n\n@media only screen and (max-width: 800px) {\n  body {\n    background-color: lightblue; }\n  .player {\n    background-color: white; }\n  .answer-container {\n    display: flex;\n    flex-wrap: wrap; } }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;\n  margin: 5px;\n  padding: 0; }\n\nbody {\n  padding-top: 4em; }\n\n.player {\n  display: flex;\n  background-color: lightblue; }\n\n.player p {\n  font-size: 30px; }\n\n.container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center; }\n\n.answer-container {\n  display: flex; }\n\n.answer {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: white;\n  background-color: #363535;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between; }\n\n.submission {\n  display: flex;\n  justify-content: space-around; }\n\n.question {\n  height: 200px;\n  width: 150px;\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  color: #363535;\n  background-color: white;\n  padding: 10px 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  border: 2px solid #363535; }\n\nh1 {\n  color: blue;\n  font-size: 40px; }\n\nh2 {\n  color: red; }\n\nbutton {\n  min-width: 4em;\n  padding: 0.4em 1em;\n  margin: 3px;\n  border: 1px solid #ccc;\n  border-radius: 2px; }\n  button:disabled {\n    background-color: #eee;\n    color: #777; }\n\n@media only screen and (max-width: 800px) {\n  body {\n    background-color: lightblue; }\n  .player {\n    background-color: white; }\n  .answer-container {\n    display: flex;\n    flex-wrap: wrap; } }\n", ""]);
 
 // exports
 

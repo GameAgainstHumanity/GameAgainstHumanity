@@ -4,7 +4,7 @@ const App = (props) => {
   return (
     <div className="homeapp">
       <p id="gamename">Game Against Humanity</p>
-      <a href="http://localhost:3001/">start game</a>
+      <a href="http://localhost:3001/game">start game</a>
     </div>
   );
 };

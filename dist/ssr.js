@@ -26614,7 +26614,7 @@ var App = function App(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     id: "gamename"
   }, "Game Against Humanity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "http://localhost:3001/"
+    href: "http://localhost:3001/game"
   }, "start game"));
 };
 

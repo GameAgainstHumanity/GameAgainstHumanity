@@ -15,7 +15,11 @@ var cors = require('cors');
 
 var ssr = require('../../views/ssrutil/render.util');
 
-var template = require('../../views/ssrutil/template'); // databases
+var headerssr = require('../../views/ssrutil/header.util');
+
+var template = require('../../views/ssrutil/template');
+
+var clienttemplate = require('../../views/ssrutil/clienttemplate'); // databases
 
 
 var db = require('./db');
@@ -23,7 +27,18 @@ var db = require('./db');
 var PORT = 3001; // client side render
 
 app.use('/', express.static(path.resolve(__dirname, '../../dist')));
-app.use('/dist/', express.static(path.resolve(__dirname, '../../dist')));
+app.use('/dist/', express.static(path.resolve(__dirname, '../../dist'))); // server side render app
+
+app.use('/game', function (req, res) {
+  var _headerssr = headerssr(initialState),
+      preloadedState = _headerssr.preloadedState,
+      content = _headerssr.content;
+
+  var response = clienttemplate('Server Rendered Page', preloadedState, content);
+  res.setHeader('Cache-Control', 'assets, max-age=604800');
+  res.send(response);
+}); // server side render
+
 var initialState = {};
 app.use('/home', function (req, res) {
   var _ssr = ssr(initialState),

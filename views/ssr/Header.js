@@ -9,15 +9,13 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var App = function App(props) {
+var Header = function Header(props) {
   return _react.default.createElement("div", {
-    className: "homeapp"
+    className: "ssr-header"
   }, _react.default.createElement("p", {
     id: "gamename"
-  }, "Game Against Humanity"), _react.default.createElement("a", {
-    href: "http://localhost:3001/game"
-  }, "start game"));
+  }, "Welcome Back Frank!"));
 };
 
-var _default = App;
+var _default = Header;
 exports.default = _default;
